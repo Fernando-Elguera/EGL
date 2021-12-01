@@ -1,0 +1,107 @@
+{% extends "./base.html" %} {% block title %} Editar materiales {% endblock %}
+{% block body %}
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <br />
+    <br />
+    <h2 align="center">Editar Materiales</h2>
+    <div class="card">
+      <div class="card-body">
+        <form action="/editarCurso/" method="POST">
+          {% csrf_token %}
+          
+
+          <div class="form-group">
+            <input
+              type="hidden"
+              id="txtNum"
+              name="txtNum"
+              value="{{curso.num}}"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-floating">
+            <input
+              type="text"
+              id="txtEdificio"
+              name="txtEdificio"
+              value="{{curso.edificio}}"
+              class="form-control"
+              required
+            />
+            <label for="floatingTextarea">Edificio</label>
+          </div>
+          <br />
+          <div class="form-floating">
+            <input
+              type="text"
+              id="txtNumerodeparte"
+              name="txtNumerodeparte"
+              value="{{curso.numerodeparte}}"
+              class="form-control"
+              required
+            />
+            <label for="floatingTextarea">Numero de parte</label>
+          </div>
+          <br />
+          <div class="form-floating">
+            <input
+              type="text"
+              id="txtDescripcion"
+              name="txtDescripcion"
+              value="{{curso.descripcion}}"
+              class="form-control"
+              maxlength="50"
+              required
+            />
+            <label for="floatingTextarea">Descripcion</label>
+          </div>
+          <br />
+          <div class="form-floating">
+            <input
+              type="text"
+              id="txtnumModelo"
+              name="txtnumModelo"
+              value="{{curso.modelo}}"
+              class="form-control"
+              required
+            />
+            <label for="floatingTextarea">Modelo</label>
+          </div>
+          <br />
+          <div class="form-floating">
+            <input
+              type="text"
+              id="txtFecha"
+              name="txtFecha"
+              value="{{curso.fecha}}"
+              class="form-control"
+              required
+            />
+            <label for="floatingTextarea">Fecha</label>
+          </div>
+          <br />
+          <div class="form-floating">
+            <input
+              type="text"
+              id="txtSolicitud"
+              name="txtSolicitud"
+              value="{{curso.solicitud}}"
+              class="form-control"
+              required
+            />
+            <label for="floatingTextarea">Cantidad</label>
+          </div>
+          <br />
+          <div class="form-group">
+            <button type="submit" class="btn btn-success btn-block text-white">
+              Guardar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
